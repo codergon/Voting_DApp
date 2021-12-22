@@ -390,6 +390,11 @@ const ElectionList = () => {
       algoSignerConnect({ address, amount, election });
     } else if (walletType === "walletconnect") {
       algoMobileConnect({ address, amount, election });
+    } else {
+      dispatch({
+        type: "alert_modal",
+        alertContent: "You need to connect your wallet to vote!",
+      });
     }
   };
 
